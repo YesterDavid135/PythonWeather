@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 from datetime import datetime
 
 from openpyxl import Workbook
@@ -59,6 +60,8 @@ class ExcelExporter:
 
         timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M")
         filename = f"{output_dir}/Wetter_{city}_{timestamp}.xlsx"
+
+        os.makedirs(output_dir, exist_ok=True)
 
         try:
             wb.save(filename)

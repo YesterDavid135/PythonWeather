@@ -279,9 +279,9 @@ class ExcelExporter:
 
         # Farben für die Linien
         if len(chart.series) >= 3:
-            chart.series[0].graphicalProperties.line.solidFill = "FFFF00"  # Durchschnitt: gelb
-            chart.series[1].graphicalProperties.line.solidFill = "FF0000"  # Höchst: rot
-            chart.series[2].graphicalProperties.line.solidFill = "0000FF"  # Tiefst: blau
+            chart.series[0].graphicalProperties.line.solidFill = "9BBB59"  # Durchschnitt: grün
+            chart.series[1].graphicalProperties.line.solidFill = "C0504D"  # Höchst: rot
+            chart.series[2].graphicalProperties.line.solidFill = "4F81BD"  # Tiefst: blau
 
         # Platzierung rechts neben der Tabelle
         chart_col = get_column_letter(len(list(ws.iter_cols())) + 6)
@@ -315,7 +315,7 @@ class ExcelExporter:
 
         # Niederschlag-Balken blau
         if bar_chart.series:
-            bar_chart.series[0].graphicalProperties.solidFill = "4472C4"
+            bar_chart.series[0].graphicalProperties.solidFill = "4F81BD"
 
         # Liniendiagramm für Temperatur (Spalte D = 4)
         line_chart = LineChart()
@@ -328,7 +328,7 @@ class ExcelExporter:
 
         # Temperatur-Linie rot
         if line_chart.series:
-            line_chart.series[0].graphicalProperties.line.solidFill = "FF0000"
+            line_chart.series[0].graphicalProperties.line.solidFill = "C0504D"
             line_chart.series[0].graphicalProperties.line.width = 22000
 
         # Legende anzeigen

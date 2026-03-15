@@ -231,7 +231,7 @@ class ExcelExporter:
             # Temperatur & Niederschlag Kombi-Diagramm
             self._add_hourly_temp_precip_chart(
                 ws, hourly_header_row, hourly_start_row, hourly_end_row,
-                current_row + 16, label_col
+                current_row + 2, label_col
             )
 
         # Zeitstempel
@@ -282,7 +282,7 @@ class ExcelExporter:
             chart.series[2].graphicalProperties.line.solidFill = "0000FF"  # Tiefst: blau
 
         # Platzierung rechts neben der Tabelle
-        chart_col = get_column_letter(len(list(ws.iter_cols())) + 3)
+        chart_col = get_column_letter(len(list(ws.iter_cols())) + 6)
         ws.add_chart(chart, f"{chart_col}{header_row}")
 
     def _add_hourly_temp_precip_chart(
@@ -349,7 +349,7 @@ class ExcelExporter:
         line_chart.y_axis.crosses = "max"
         bar_chart += line_chart
 
-        ws.add_chart(bar_chart, f"A{placement_row}")
+        ws.add_chart(bar_chart, f"B{placement_row}")
 
     #  Hilfsmethoden
 

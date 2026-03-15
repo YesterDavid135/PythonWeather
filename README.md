@@ -55,6 +55,7 @@ Ruft aktuelle Wetterdaten und Vorhersagen für beliebige Städte ab und exportie
 - Diagramme: Temperaturverlauf (täglich) und Diagramm Temperatur & Niederschlag (stündlich)
 - Conditional formatting für Temperaturspalten
 - Mehrere Städte gleichzeitig möglich
+- Automatisches Erstellen des Output-Folders
 
 ## Installation
 

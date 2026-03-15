@@ -227,11 +227,6 @@ class ExcelExporter:
                 ws.cell(row=r, column=label_col, value=f"{date_val} {time_val}")
             ws.column_dimensions[get_column_letter(label_col)].hidden = True
 
-            # Luftfeuchtigkeit-Balkendiagramm
-            self._add_humidity_chart(
-                ws, hourly_header_row, hourly_start_row, hourly_end_row,
-                len(hourly_data), current_row, label_col
-            )
 
             # Temperatur & Niederschlag Kombi-Diagramm
             self._add_hourly_temp_precip_chart(
@@ -289,64 +284,6 @@ class ExcelExporter:
         # Platzierung rechts neben der Tabelle
         chart_col = get_column_letter(len(list(ws.iter_cols())) + 3)
         ws.add_chart(chart, f"{chart_col}{header_row}")
-
-    def _add_humidity_chart(
-        self,
-        ws,
-        header_row: int,
-        start_row: int,
-        end_row: int,
-        num_entries: int,
-        placement_row: int,
-        label_col: int = 2,
-    ) -> None:
-        """Fügt ein Balkendiagramm mit Luftfeuchtigkeit und Niederschlag hinzu."""
-        chart = BarChart()
-        chart.type = "col"
-        chart.title = "Luftfeuchtigkeit & Niederschlag (stündlich)"
-        chart.y_axis.title = "Wert"
-        chart.x_axis.title = "Datum / Uhrzeit"
-        chart.style = 10
-        chart.width = 24
-        chart.height = 12
-
-        # Beschriftung: Datum/Uhrzeit
-        labels = Reference(ws, min_col=label_col, min_row=start_row, max_row=end_row)
-
-        # Spalte E = Luftfeuchtigkeit (%), Spalte H = Niederschlag (mm)
-        humidity_data = Reference(
-            ws, min_col=5, min_row=header_row, max_row=end_row
-        )
-        precip_data = Reference(
-            ws, min_col=8, min_row=header_row, max_row=end_row
-        )
-
-        chart.add_data(humidity_data, titles_from_data=True)
-        chart.add_data(precip_data, titles_from_data=True)
-        chart.set_categories(labels)
-
-        # Legende anzeigen
-        chart.legend = Legend()
-        chart.legend.position = "b"
-
-        # X-Achse: Uhrzeiten anzeigen mit Rotation
-        chart.x_axis.tickLblPos = "low"
-        chart.x_axis.txPr = RichText(
-            p=[Paragraph(
-                pPr=ParagraphProperties(
-                    defRPr=CharacterProperties(sz=800)
-                ),
-                endParaRPr=CharacterProperties(sz=800),
-            )],
-            bodyPr=RichTextProperties(rot=-5400000),
-        )
-
-        # Farben
-        if len(chart.series) >= 2:
-            chart.series[0].graphicalProperties.solidFill = "5B9BD5"  # Luftfeuchtigkeit: blau
-            chart.series[1].graphicalProperties.solidFill = "70AD47"  # Niederschlag: Grün
-
-        ws.add_chart(chart, f"A{placement_row}")
 
     def _add_hourly_temp_precip_chart(
         self,

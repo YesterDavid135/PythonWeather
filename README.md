@@ -31,6 +31,7 @@ PythonWeather/
 │   ├── data_processor.py    # Datenverarbeitung
 │   └── excel_exporter.py    # Excel-Export
 ├── doc/                     # Dokumentation und Diagramme
+│   └── examples/            # Beispielreports (Excel)
 └── out/                     # Generierte Excel-Dateien
 ```
 
@@ -107,13 +108,23 @@ Das Sequenzdiagramm zeigt den Ablauf eines typischen Programmstarts:
 
 ---
 
-## Beispiel-Diagramme aus dem Excel-Export
+## 5. Beispielreports
 
-### Temperaturverlauf (Tagesvorhersage)
+Im Ordner [`doc/examples/`](doc/examples/) befinden sich drei fertig generierte Excel-Dateien als Beispielausgaben:
+
+| Datei | Beschreibung |
+|-------|-------------|
+| [Wetter_Basel_2026-03-16_16-49.xlsx](doc/examples/Wetter_Basel_2026-03-16_16-49.xlsx) | Basel, Schweiz |
+| [Wetter_Miami_2026-03-16_16-49.xlsx](doc/examples/Wetter_Miami_2026-03-16_16-49.xlsx) | Miami, USA |
+| [Wetter_Oslo_2026-03-16_16-49.xlsx](doc/examples/Wetter_Oslo_2026-03-16_16-49.xlsx) | Oslo, Norwegen |
+
+### Beispiel-Diagramme aus dem Excel-Export
+
+#### Temperaturverlauf (Tagesvorhersage)
 
 ![Temperaturverlauf](doc/Temperaturverlauf.png)
 
-### Stündliche Temperatur & Niederschlag
+#### Stündliche Temperatur & Niederschlag
 
 ![Kombivergleich](doc/Kombivergleich.png)
 

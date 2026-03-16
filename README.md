@@ -112,11 +112,11 @@ Das Sequenzdiagramm zeigt den Ablauf eines typischen Programmstarts:
 
 Im Ordner [`doc/examples/`](doc/examples/) befinden sich drei fertig generierte Excel-Dateien als Beispielausgaben:
 
-| Datei | Beschreibung |
-|-------|-------------|
-| [Wetter_Basel_2026-03-16_16-49.xlsx](doc/examples/Wetter_Basel_2026-03-16_16-49.xlsx) | Basel, Schweiz |
-| [Wetter_Miami_2026-03-16_16-49.xlsx](doc/examples/Wetter_Miami_2026-03-16_16-49.xlsx) | Miami, USA |
-| [Wetter_Oslo_2026-03-16_16-49.xlsx](doc/examples/Wetter_Oslo_2026-03-16_16-49.xlsx) | Oslo, Norwegen |
+| Datei                                                                                 | PDF                                                                                 | Beschreibung   |
+|---------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|----------------|
+| [Wetter_Basel_2026-03-16_16-49.xlsx](doc/examples/Wetter_Basel_2026-03-16_16-49.xlsx) | [Wetter_Basel_2026-03-16_16-49.pdf](doc/examples/Wetter_Basel_2026-03-16_16-49.pdf) | Basel, Schweiz |
+| [Wetter_Miami_2026-03-16_16-49.xlsx](doc/examples/Wetter_Miami_2026-03-16_16-49.xlsx) | [Wetter_Miami_2026-03-16_16-49.pdf](doc/examples/Wetter_Miami_2026-03-16_16-49.pdf) | Miami, USA     |
+| [Wetter_Oslo_2026-03-16_16-49.xlsx](doc/examples/Wetter_Oslo_2026-03-16_16-49.xlsx)   | [Wetter_Oslo_2026-03-16_16-49.pdf](doc/examples/Wetter_Oslo_2026-03-16_16-49.pdf)   | Oslo, Norwegen |
 
 ### Beispiel-Diagramme aus dem Excel-Export
 
